@@ -8,7 +8,7 @@ This repository contains my customized configurations for Oh My Zsh, including t
 The repository features the lukerandall theme, which customizes your prompt to display useful information, such as:
 
 * Username and hostname
-* IP address (local or VPN)
+* IP address (local and VPN)
 * Current directory 
 * Git status, if inside a Git repository
 * Current time displayed on the right
