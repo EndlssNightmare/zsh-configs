@@ -36,7 +36,7 @@ cd zsh-configs
 
 <br>
 
-To change the neofetch image, edit the file `~/.config/neofetch/config.conf'` and set the path of your image on "image_source" variable:
+To change neofetch's image, edit the file `~/.config/neofetch/config.conf'` and set the path of your image on "image_source" variable:
 
 ```bash
 image_source="/opt/neofetch-images/guts.jpg"
