@@ -13,7 +13,7 @@ The repository features the lukerandall theme, which customizes your prompt to d
 * Git status, if inside a Git repository
 * Current time displayed on the right
 
-![Terminal](Images/2024-11-21_01-09.png)
+![Terminal](Images/terminal.png)
 
 <br>
 
