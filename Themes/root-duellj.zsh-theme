@@ -24,9 +24,14 @@ function get_ip() {
   fi
 }
 
-PROMPT='%{$fg_bold[green]%}%n@%m%{$reset_color%} %{$fg_bold[cyan]%}$(get_ip)%{$reset_color%} %{$fg_bold[blue]%}[%~]%{$reset_color%} $(my_git_prompt_info)%{$reset_color%}%B»%b '
-RPROMPT='%F{240}[%*]%f'
-#RPS1="${return_code}"
+PROMPT=$'%{\e[1;31m%}%B┌─[%b%{\e[0m%}%{\e[1;31m%}%n@%m%{\e[0m%}%{\e[1;31m%}%B]%b%{\e[0m%} - %{\e[1;31m%}%B$(get_ip)%b - %b%{\e[1;31m%}%B[%b%{\e[1;37m%}%~%{\e[1;31m%}%B]%b%{\e[0m%} $(my_git_prompt_info)%{$reset_color%}%b
+%{\e[1;31m%}%B└─%B[%{\e[1;35m%}#%{\e[1;31m%}%B]%{\e[0m%}%b '
+RPROMPT='[%*] '
+PS2=$' \e[0;34m%}%B>%{\e[0m%}%b '
+
+precmd() {
+  echo
+}
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}("
 ZSH_THEME_GIT_PROMPT_SUFFIX=") %{$reset_color%}"

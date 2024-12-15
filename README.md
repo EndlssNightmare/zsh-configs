@@ -5,7 +5,7 @@ This repository contains my customized configurations for Oh My Zsh, including t
 <br>
 
 ## Plugins and Themes
-The repository features the lukerandall theme, which customizes your prompt to display useful information, such as:
+The repository features lukerandall and duellj themes, both modificated with a customized prompt to display useful information, such as:
 
 * Username and hostname
 * IP address (local and VPN)
@@ -13,7 +13,11 @@ The repository features the lukerandall theme, which customizes your prompt to d
 * Git status, if inside a Git repository
 * Current time displayed on the right
 
+### Lukerandall theme
 ![Terminal](Images/terminal.png)
+
+### Duellj theme
+![Terminal](Images/terminal2.png)
 
 <br>
 
@@ -44,7 +48,11 @@ image_source="/opt/neofetch-images/guts.jpg"
 
 <br>
 
-Lastly, reset the terminal to analyze the changes
+You can also make your prompt modifications on `~/.oh-my-zsh/themes/lukerandall.zsh-theme`.
+
+<br>
+
+Lastly, reset your terminal:
 
 ```bash
 source ~/.zshrc
