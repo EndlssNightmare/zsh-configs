@@ -24,8 +24,18 @@ function get_ip() {
   fi
 }
 
-PROMPT=$'%{\e[1;31m%}%B┌─[%b%{\e[0m%}%{\e[1;31m%}%n@%m%{\e[0m%}%{\e[1;31m%}%B]%b%{\e[0m%} - %{\e[1;31m%}%B$(get_ip)%b - %b%{\e[1;31m%}%B[%b%{\e[1;37m%}%~%{\e[1;31m%}%B]%b%{\e[0m%} $(my_git_prompt_info)%{$reset_color%}%b
-%{\e[1;31m%}%B└─%B[%{\e[1;35m%}#%{\e[1;31m%}%B]%{\e[0m%}%b '
+function update_prompt() {
+  local venv_prefix=""
+
+  if [[ -n "$VIRTUAL_ENV" ]]; then
+    venv_name="${VIRTUAL_ENV##*/}"
+    venv_prefix="%F{red}(%f%F{green}$venv_name%f%F{red})%f%F{red}─%f"
+  fi
+
+  PROMPT=$'%F{red}%B┌─'"$venv_prefix"$'%F{red}%B[%b%F{reset}%F{154}%n@%m%F{reset}%F{red}%B]%b%F{reset}%F{red} - %F{red}%B$(get_ip)%b - %b%F{red}%B[%b%F{white}%~%F{red}%B]%b%F{reset} $(my_git_prompt_info)%f
+%F{red}%B└─%B[%F{magenta}#%F{red}%B]%F{reset}%b '
+}
+
 RPROMPT='[%*] '
 PS2=$' \e[0;34m%}%B>%{\e[0m%}%b '
 
@@ -42,3 +52,6 @@ ZSH_THEME_GIT_PROMPT_RENAMED="~"
 ZSH_THEME_GIT_PROMPT_DELETED="!"
 ZSH_THEME_GIT_PROMPT_UNMERGED="?"
 
+autoload -U add-zsh-hook
+add-zsh-hook precmd update_prompt
+add-zsh-hook chpwd update_prompt
