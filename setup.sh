@@ -5,6 +5,8 @@ BLUE="\033[0;34m"
 RED="\033[0;31m"
 LIGHT_GREEN="\033[1;32m"
 RESET_COLOR="\033[0m"
+REPO_DIR="neofetch"
+REPO_URL="https://github.com/dylanaraps/neofetch.git"
 
 # Ask the user which network interface to configure
 echo -e "${BLUE}Please enter your network interface that you want to show on terminal (e.g., eth0, wlan0): \c ${RESET_COLOR}"
@@ -20,7 +22,16 @@ sudo apt update
 
 # Install necessary packages
 echo -e "${BLUE}Installing required packages...${RESET_COLOR}"
-sudo apt install -y neofetch zsh chafa
+sudo apt install -y zsh chafa
+
+if [ ! -d "$REPO_DIR" ]; then
+  git clone "$REPO_URL"
+fi
+cd "$REPO_DIR"
+sudo make install
+cd ..
+echo "Neofetch installation script finished."
+
 
 # Install Oh My Zsh
 echo -e "${BLUE}Installing Oh My Zsh...${RESET_COLOR}"
@@ -84,6 +95,7 @@ while true; do
 done
 
 neofetch
+sudo neofetch
 
 # Copy the Neofetch configuration file
 echo -e "${BLUE}Copying config.conf to the Neofetch configuration directory...${RESET_COLOR}\n"

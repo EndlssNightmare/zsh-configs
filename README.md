@@ -14,7 +14,7 @@ The repository features lukerandall and duellj themes, both modificated with a c
 * Current time displayed on the right
 
 ### Lukerandall theme
-![Terminal](Images/terminal.png)
+![Terminal](Images/ReadMePics/terminal.png)
 
 ### Duellj theme
 ![Terminal](Images/terminal2.png)
