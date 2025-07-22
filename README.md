@@ -17,7 +17,7 @@ The repository features lukerandall and duellj themes, both modificated with a c
 ![Terminal](Images/ReadMePics/terminal.png)
 
 ### Duellj theme
-![Terminal](Images/terminal2.png)
+![Terminal](Images/ReadMePics/terminal2.png)
 
 <br>
 
